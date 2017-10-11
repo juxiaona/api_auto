@@ -4,6 +4,7 @@ import time
 from common.HTMLTestRunner import HTMLTestRunner
 from common.sendmail import SendMail
 import unittest
+from config import read_config
 
 class TestRunner():
 
@@ -28,7 +29,12 @@ class TestRunner():
 
 		fp.close()
 		'''发送邮件'''
-		mail=SendMail('smtp.163.com', 'ju_xiaona@163.com', 'jxn461028', 'juxiaona@xxkuaipao.com')
+		server=read_config.mail_server
+		username=read_config.mail_username
+		password=read_config.mail_password
+		receiver=read_config.mail_receiver
+
+		mail=SendMail(server,username,password,receiver)
 		mail.sendmail(filename)
 
 		
