@@ -3,6 +3,7 @@ sys.path.append('../')
 from common.read_excel import Read_Excel
 import unittest
 import requests
+from common.logger import Log
 
 class Read_Cases(unittest.TestCase):
 
@@ -19,12 +20,12 @@ class Read_Cases(unittest.TestCase):
 		self.test_data=get_config.get_test_data(self.table, self.nrows)
 		self.status_code=get_config.get_test_code(self.table, self.nrows)
 		self.except_result=get_config.get_except_result(self.table, self.nrows)
-
+		self.log=Log()
 
 	def test_read(self):
 
 		for i in range(self.nrows-1):
-
+			self.log.info('---start----')
 			r=requests.request(self.test_mothod[i], self.test_url[i])
 
 			try:

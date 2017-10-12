@@ -1,0 +1,10 @@
+[2017-10-12 15:05:12,303]-logger.py]-INFO:----start----
+[2017-10-12 15:05:12,318]-logger.py]-INFO:----end----
+[2017-10-12 15:05:12,321]-logger.py]-INFO:---start----
+[2017-10-12 15:05:12,812]-logger.py]-INFO:---start----
+[2017-10-12 15:05:13,249]-logger.py]-INFO:----start----
+[2017-10-12 15:05:13,676]-logger.py]-INFO:http://www.papayacamera.com/api/get_ads_config
+[2017-10-12 15:05:13,677]-logger.py]-INFO:----end----
+[2017-10-12 15:05:13,678]-logger.py]-INFO:----start----
+[2017-10-12 15:05:14,094]-logger.py]-INFO:http://www.papayacamera.com/api/get_carousel_config
+[2017-10-12 15:05:14,095]-logger.py]-INFO:----end----
