@@ -31,6 +31,7 @@ class SendMail():
 		'''创建一个带附件的实例'''
 		msg= MIMEMultipart()
 		msg['Subject'] = subject
+		msg['From']='API Test'
 		msg.attach(mail_text)
 		msg.attach(mail_att)
 
