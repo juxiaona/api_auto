@@ -15,7 +15,7 @@ class Read_Excel():
 
 		self.workbook=xlrd.open_workbook(self.path)
 
-	#获取标签页
+	#获取标签页内容
 	def get_sheet_table(self):
 
 		table=self.workbook.sheet_by_name(self.sheet_name)
@@ -32,6 +32,15 @@ class Read_Excel():
 
 		ncols=table.ncols
 		return ncols
+
+	#获取第一条用例的内容,跟表头组成一个字典
+	def get_test_case(self,table,ncols):
+
+		D={}
+		for i in range(ncols):
+			D[table.row_values(0)[i]]=table.row_values(1)[i]
+		return D
+
 		
 	#获取用例名称
 	def get_test_name(self,table,nrows):
