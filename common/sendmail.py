@@ -7,13 +7,17 @@ class SendMail():
 
 	def __init__(self,server,username,password,receiver):
 
+		#发件邮箱的服务器
 		self.server=server
+		#发件邮箱的用户名和密码
 		self.username=username
 		self.password=password
+		#发件邮箱使用用户名
 		self.sender=username
+		#收件邮箱
 		self.receiver=receiver
 
-
+	#发送邮件
 	def sendmail(self,filename):
 
 		'''主题'''

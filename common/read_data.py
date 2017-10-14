@@ -13,7 +13,7 @@ class ReadExcel():
 		#获取总列数
 		self.col_nums=self.table.ncols
 
-
+	#每一行数据生成一个字典，所有的数据组合成一个list
 	def data_dict(self):
 
 		if self.row_nums<=1:

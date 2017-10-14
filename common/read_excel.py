@@ -5,7 +5,9 @@ class Read_Excel():
 
 	def __init__(self,path,sheet_name):
 
+		#Excel的路径
 		self.path=path
+		#Excel的sheet名称
 		self.sheet_name=sheet_name
 
 	#打开excel表格

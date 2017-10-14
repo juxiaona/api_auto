@@ -8,6 +8,7 @@ class Op_Mysql():
 
 	def __init__(self):
 
+		#从配置文件读取MySQL的信息
 		self.host=read_config.mysql_host
 		self.user=read_config.mysql_user
 		self.pasw=read_config.mysql_pasw
@@ -17,6 +18,7 @@ class Op_Mysql():
 
 	def db_conn(self):
 
+		#组合connect参数
 		config={
 			'host':self.host,
 			'user':self.user,
@@ -26,12 +28,16 @@ class Op_Mysql():
 			}
 
 		try:
+			#打开一个数据库连接
 			self.db=pymysql.connect(**config)
+			#创建一个游标
 			self.cursor=self.db.cursor()
+			#记录日志
 			self.log.info('database connect successfully')
 		except ConnectionError as e:
 			self.log.error(e)
 
+	#执行sql语句
 	def execute_sql(self,sql):
 
 		self.db_conn()
@@ -46,18 +52,21 @@ class Op_Mysql():
 		
 		return self.cursor
 
+	#获取全部数据
 	def get_all(self,sql):
 
 		cur=self.execute_sql(sql)
 		result=cur.fetchall()
 		return result
 
+	#获取一条数据
 	def get_one(self,sql):
 
 		cur=self.execute_sql(sql)
 		result=cur.fetchone()
 		return result
 
+	#关闭数据库连接
 	def db_close():
 
 		self.db.close()
